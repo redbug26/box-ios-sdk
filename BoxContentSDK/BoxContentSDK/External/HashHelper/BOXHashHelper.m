@@ -3,6 +3,7 @@
  *
  *  Based on FileHash by Joel Lopes Da Silva:
  *  Copyright © 2010-2014 Joel Lopes Da Silva. All rights reserved.
+ *  Copyright © 2023 Miguel Vanhove. All rights reserved.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -24,6 +25,11 @@
 // System framework and libraries
 #define COMMON_DIGEST_FOR_OPENSSL
 #include <CommonCrypto/CommonDigest.h>
+
+#ifndef SHA_DIGEST_LENGTH
+#define SHA_DIGEST_LENGTH CC_SHA1_DIGEST_LENGTH
+#endif
+
 #include <CoreFoundation/CoreFoundation.h>
 #include <stdint.h>
 #include <stdio.h>
